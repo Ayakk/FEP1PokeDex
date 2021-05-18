@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pokemon</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="header-container">
+        <div>
+           <h1 id="header-text">Pokemon</h1>
+        </div>
+    </div>
+    <div id="searchfield-container">
+        <form>
+            <label for="searchfield_input">Search Pokemon by name or ID:</label>
+            <input type="text" id="searchfield_input" name="searchfield_input">
+            <button id="searchfield_button">Search</button>
+        </form>
+    </div>
+    <div id="container">
+        <div id="poke-container">
+                <button id="generate-pokemon">Generate Pokemon</button>
+                <script>render()</script>
+        </div>
+    </div>
+</body>
+</html>
