@@ -10,8 +10,10 @@ html,body{
 
 #poke-container {
     margin: auto;
-    width: 40%;
-    padding: 10px;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    gap: 2rem;
 }
 
 #header-container {
@@ -37,10 +39,8 @@ html,body{
 }
 
 .card {
-    margin: auto;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    width: 80%;
   }
   
   .card:hover {

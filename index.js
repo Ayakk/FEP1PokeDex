@@ -41,9 +41,40 @@ function fetchPokemonByName(name){
         console.log("Line 64");
         console.log(allpokemon);
         // fetchPokeData(allpokemon);
-        renderPokemon(allpokemon);
+        renderPokemonByName(allpokemon);
     })
 }
+//zet pokemon op pagina
+function renderPokemonByName(pokeData){
+    let allPokemonsC = document.getElementById('poke-container');
+    let pokeContainer = document.createElement("div") 
+    pokeContainer.classList.add('card');
+
+    createPokeImage(pokeData.id, pokeContainer);
+
+    let pokeName = document.createElement('h4') 
+    pokeName.innerText = pokeData.name
+
+    let pokeNumber = document.createElement('p')
+    pokeNumber.innerText = `#${pokeData.id}`
+   
+    let pokeTypes = document.createElement('ul')
+    createTypes(pokeData.types, pokeTypes) 
+
+    let pokeAbilities = document.createElement('ul')
+    createAbilitiesByName(pokeData.abilities, pokeAbilities) 
+
+    pokeContainer.append(pokeName, pokeNumber, pokeTypes, pokeAbilities);
+    allPokemonsC.appendChild(pokeContainer);
+}
+function createAbilitiesByName(abilities, ul){
+    abilities.forEach(function(ability){
+        let abilityLi = document.createElement('li');
+        abilityLi.innerText = ability['ability']['name'];
+        ul.append(abilityLi)
+    })
+}
+
 //haalt data van pokemon
 function fetchPokeData(pokemon){
     let url = pokemon.url
